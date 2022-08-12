@@ -18,8 +18,8 @@ export function printOwing(invoice) {
   printDetails(invoice, outstanding);
 }
 
-const invoice = {
-  orders: [{ amount: 2 }, { amount: 5 }],
-  customer: '엘리',
-};
-printOwing(invoice);
+// const invoice = {
+//   orders: [{ amount: 2 }, { amount: 5 }],
+//   customer: '엘리',
+// };
+// printOwing(invoice);
