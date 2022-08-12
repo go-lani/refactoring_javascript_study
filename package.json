@@ -1,0 +1,12 @@
+{
+  "name": "refactoring_javascript_study",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/minjman2659/refactoring_javascript_study.git",
+  "author": "minjman2659 <minjman2659@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
