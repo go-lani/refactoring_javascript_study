@@ -2,11 +2,21 @@
   "name": "refactoring_javascript_study",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/minjman2659/refactoring_javascript_study.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/publizm/refactoring_javascript_study.git"
+  },
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
   "author": "minjman2659 <minjman2659@gmail.com>",
   "license": "MIT",
   "type": "module",
   "dependencies": {
     "nodemon": "^2.0.19"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "jest": "^28.1.3"
   }
 }
