@@ -1,9 +1,9 @@
 export function printOwing(invoice) {
   let outstanding = 0;
 
-  console.log('***********************');
-  console.log('**** Customer Owes ****');
-  console.log('***********************');
+  console.log("***********************--");
+  console.log("**** Customer Owes ****");
+  console.log("***********************");
 
   // calculate outstanding
   for (const o of invoice.orders) {
@@ -26,6 +26,6 @@ export function printOwing(invoice) {
 
 const invoice = {
   orders: [{ amount: 2 }, { amount: 5 }],
-  customer: '엘리',
+  customer: "엘리",
 };
 printOwing(invoice);
