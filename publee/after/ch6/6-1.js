@@ -1,4 +1,10 @@
+import isEmpty from "lodash/isEmpty";
+import isObject from "lodash/isObject";
+
 export function printOwing(invoice) {
+  if (!isObject(invoice) || isEmpty(invoice)) {
+    throw new Error("잘못된 값이 입력됬습니다");
+  }
   const totalAmount = () =>
     invoice.orders.reduce((pre, cur) => pre + cur.amount, 0);
 
