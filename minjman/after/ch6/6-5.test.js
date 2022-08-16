@@ -40,13 +40,13 @@ describe('6-5 Test', () => {
     beforeEach(() => {
       customer = { address: { state: 'ME' } };
     });
-    it('inNewEngland should be function', () => {
+    it('should be function', () => {
       expect(typeof inNewEngland).toBe('function');
     });
-    it('inNewEngland should return true', () => {
+    it('should return true', () => {
       expect(inNewEngland(customer)).toBe(true);
     });
-    it('inNewEngland should return false', () => {
+    it('should return false', () => {
       customer.address.state = 'KR';
       expect(inNewEngland(customer)).toBe(false);
     });
