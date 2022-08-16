@@ -1,15 +1,12 @@
 export const printBanner = () => {
-  console.log('***********************');
-  console.log('**** Customer Owes ****');
-  console.log('***********************');
+  console.log("***********************");
+  console.log("**** Customer Owes ****");
+  console.log("***********************");
 };
 
-export const calculateOutstanding = (invoice) => {
-  let outstanding = 0;
-  for (const o of invoice.orders) {
-    outstanding += o.amount;
-  }
-  return { outstanding };
+export const calculateResult = (invoice) => {
+  const result = invoice.orders.reduce((acc, cur) => acc + cur.amount, 0);
+  return { result };
 };
 
 export const recordDueDate = (invoice) => {
@@ -21,8 +18,8 @@ export const recordDueDate = (invoice) => {
   );
 };
 
-export const printDetails = (invoice, outstanding) => {
+export const printDetails = (invoice, result) => {
   console.log(`name: ${invoice.customer}`);
-  console.log(`amount: ${outstanding}`);
+  console.log(`amount: ${result}`);
   console.log(`due: ${invoice.dueDate.toLocaleDateString()}`);
 };

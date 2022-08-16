@@ -1,21 +1,18 @@
 import {
   printBanner,
-  calculateOutstanding,
+  calculateResult,
   recordDueDate,
   printDetails,
-} from './utils/6-1.js';
+} from "./utils/6-1.js";
 
 export function printOwing(invoice) {
   printBanner();
 
-  // calculate outstanding
-  const { outstanding } = calculateOutstanding(invoice);
+  const { result } = calculateResult(invoice);
 
-  // record due date
   recordDueDate(invoice);
 
-  //print details
-  printDetails(invoice, outstanding);
+  printDetails(invoice, result);
 }
 
 // const invoice = {

@@ -1,20 +1,21 @@
 export class Order {
+  #data;
   constructor(record) {
-    this._data = record;
+    this.#data = record;
   }
 
   get quantity() {
-    return this._data.quantity;
+    return this.#data.quantity;
   }
   get itemPrice() {
-    return this._data.itemPrice;
+    return this.#data.itemPrice;
   }
 
   get basePrice() {
     return this.quantity * this.itemPrice;
   }
 
-  get quantityDiscount() {
+  get discount() {
     return Math.max(0, this.quantity - 500) * this.itemPrice * 0.05;
   }
 
@@ -23,6 +24,6 @@ export class Order {
   }
 
   get price() {
-    return this.basePrice - this.quantityDiscount + this.shipping;
+    return this.basePrice - this.discount + this.shipping;
   }
 }
