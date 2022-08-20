@@ -2,15 +2,20 @@ export class Range {
     #min;
     #max;
     constructor(min, max) {
-        this.#min = min;
-        this.#max = max;
+      this.#min = min;
+      this.#max = max;
     }
+
     get min() {
-        return this.#min;
+      return this.#min;
     }
 
     get max() {
-        return this.#max;
+      return this.#max;
+    }
+
+    contain(number) {
+      return number < this.#min || number > this.#max;
     }
 }
 
@@ -33,7 +38,7 @@ export const temperatureRange = {
 const range = new Range(temperatureRange.min, temperatureRange.max);
 
 export function readingsOutsideRange({ readings, range }) {
-  return readings.filter((reading) => reading.temp < range.min || reading.temp > range.max);
+  return readings.filter(reading => range.contain(reading.temp));
 }
 
-// console.log(readingsOutsideRange({ reading: station.readings, range }));
+// console.log(readingsOutsideRange({ readings: station.readings, range }));
