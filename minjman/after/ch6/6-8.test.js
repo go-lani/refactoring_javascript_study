@@ -1,4 +1,4 @@
-import { Range, readingsOutsideRange, station, temperatureRange } from "./6-8";
+import { Range, readingsOutsideRange, station, temperatureRange } from './6-8';
 
 describe('6-8 Test', () => {
     let range = null;
