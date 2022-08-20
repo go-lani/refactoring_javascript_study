@@ -20,24 +20,24 @@ describe('6-9 Test', () => {
         expect(reading.year).toBe(data.year);
     });
     it('should get baseRate(1)', () => {
-        const baseRate = reading.getBaseRate(data.month, data.year);
+        const baseRate = reading.baseRate;
         expect(baseRate).toBe(0.1);
     });
     it('should get baseRate(2)', () => {
-        const baseRate = reading.getBaseRate(8, 2022);
+        const reading = new Reading({ customer: 'ivan', quantity: 10, month: 8, year: 2022 })
+        const baseRate = reading.baseRate;
         expect(baseRate).toBe(0.2);
     })
-    it('should calculate baseCharge', () => {
-        const baseCharge = reading.calculateBaseCharge(reading.getBaseRate(data.month, data.year));
+    it('should get baseCharge', () => {
+        const baseCharge = reading.baseCharge;
         expect(baseCharge).toBe(1);
     });
     it('should get taxThreshold', () => {
-        const taxThreshold = reading.getTaxThreshold();
+        const taxThreshold = reading.taxThreshold;
         expect(taxThreshold).toBe(0.1);
     });
-    it('should calculate taxableCharge', () => {
-        const baseCharge = reading.calculateBaseCharge(reading.getBaseRate(data.month, data.year));
-        const taxableCharge = reading.calculateTaxableCharge(baseCharge);
+    it('should get taxableCharge', () => {
+        const taxableCharge = reading.taxableCharge;
         expect(taxableCharge).toBe(0.9);
     })
 })

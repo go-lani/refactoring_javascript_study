@@ -26,23 +26,23 @@ export class Reading {
     return this.#year;
   }
 
-  getBaseRate(month, year) {
-    if (year === this.#year && month === this.#month) {
+  get baseRate() {
+    if (this.#year === 2017 && this.#month === 5) {
       return 0.1;
     }
     return 0.2;
   }
 
-  calculateBaseCharge(baseRate) {
-    return baseRate * this.#quantity;
+  get baseCharge() {
+    return this.baseRate * this.#quantity;
   }
 
-  getTaxThreshold() {
+  get taxThreshold() {
     return 0.1;
   }
 
-  calculateTaxableCharge(baseCharge) {
-    return Math.max(0, baseCharge - this.getTaxThreshold());
+  get taxableCharge() {
+    return Math.max(0, this.baseCharge - this.taxThreshold);
   }
 }
 
@@ -50,10 +50,13 @@ export class Reading {
 const reading = new Reading({ customer: 'ivan', quantity: 10, month: 5, year: 2017 });
 
 //TODO client1 & client3
-const baseRate = reading.getBaseRate(reading.month, reading.year);
-const baseCharge = reading.calculateBaseCharge(baseRate);
+const baseRate = reading.baseRate;
+const baseCharge = reading.baseCharge;
+// console.log(baseRate);
 // console.log(baseCharge);
 
 //TODO client2
-const taxableCharge = reading.calculateTaxableCharge(baseCharge);
+const taxThreshold = reading.taxThreshold;
+const taxableCharge = reading.taxableCharge;
+// console.log(taxThreshold);
 // console.log(taxableCharge);
