@@ -7,3 +7,4 @@ function calculateBaseCharge(aReading) {
 }
 
 const basicChargeAmount = calculateBaseCharge(aReading);
+console.log(basicChargeAmount);

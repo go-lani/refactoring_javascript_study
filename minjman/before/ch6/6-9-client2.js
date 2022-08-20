@@ -8,3 +8,4 @@ function taxThreshold(year) {
 }
 
 export const taxableCharge = Math.max(0, base - taxThreshold(aReading.year));
+console.log(taxableCharge);
