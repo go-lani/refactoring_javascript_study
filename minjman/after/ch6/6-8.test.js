@@ -1,10 +1,10 @@
-import { Range, readingsOutsideRange, station, operationPlan } from "./6-8";
+import { Range, readingsOutsideRange, station, temperatureRange } from "./6-8";
 
 describe('6-8 Test', () => {
     let range = null;
     let filterBy = null;
     beforeEach(() => {
-        range = new Range(operationPlan.temperatureFloor, operationPlan.temperatureCeiling);
+        range = new Range(temperatureRange.min, temperatureRange.max);
         filterBy = readingsOutsideRange({ station, range });
     })
     it('should filter reading data within range', () => {
