@@ -32,8 +32,8 @@ export const temperatureRange = {
 
 const range = new Range(temperatureRange.min, temperatureRange.max);
 
-export function readingsOutsideRange({ station, range }) {
-  return station.readings.filter((reading) => reading.temp < range.min || reading.temp > range.max);
+export function readingsOutsideRange({ readings, range }) {
+  return readings.filter((reading) => reading.temp < range.min || reading.temp > range.max);
 }
 
-// console.log(readingsOutsideRange({ station, range }));
+// console.log(readingsOutsideRange({ reading: station.readings, range }));

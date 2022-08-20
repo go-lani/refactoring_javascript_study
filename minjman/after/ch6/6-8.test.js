@@ -5,7 +5,7 @@ describe('6-8 Test', () => {
     let filterBy = null;
     beforeEach(() => {
         range = new Range(temperatureRange.min, temperatureRange.max);
-        filterBy = readingsOutsideRange({ station, range });
+        filterBy = readingsOutsideRange({ readings: station.readings, range });
     })
     it('should filter reading data within range', () => {
         expect(filterBy).toEqual([
