@@ -36,7 +36,7 @@ describe('6-9 Test', () => {
         const taxThreshold = reading.taxThreshold;
         expect(taxThreshold).toBe(0.1);
     });
-    it('should calculate taxableCharge', () => {
+    it('should get taxableCharge', () => {
         const taxableCharge = reading.taxableCharge;
         expect(taxableCharge).toBe(0.9);
     })
