@@ -31,4 +31,4 @@ describe('6-11-2 Test', () => {
             expect(ordersLength).toBe(2);
         });
     });
-})
+});

@@ -23,10 +23,3 @@ if (isTest) {
 console.log('dsadsad')
 const ordersLength = getOrdersLength(argv);
 // console.log(ordersLength);
-
-
-
-
-
-
-
