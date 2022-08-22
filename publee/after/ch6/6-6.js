@@ -1,5 +1,9 @@
-let defaultOwner = { firstName: "마틴", lastName: "파울러" };
+export default class Owner {
+  constructor(owner = { firstName: "마틴", lastName: "파울러" }) {
+    this.owner = owner;
+  }
 
-export function getDefaultOwner() {
-  return defaultOwner;
+  getDefaultOwner() {
+    return this.owner;
+  }
 }

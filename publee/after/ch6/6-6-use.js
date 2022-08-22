@@ -1,4 +1,4 @@
-import { getDefaultOwner } from "./6-6.js";
+import Owner from "./6-6";
 
-const owner = getDefaultOwner();
-owner.firstName = "publee";
+const owner = new Owner();
+owner.firstName = "lee";
