@@ -1,7 +1,19 @@
+import { Page } from "./6-7.js";
+
 describe("6-7 test", () => {
-  it("title", () => {
-    const tpHd = "제목없음";
-    const result = `<h1>${tpHd}</h1>`;
-    expect(result).toEqual(`<h1>제목없음</h1>`);
+  let page;
+  beforeEach(() => {
+    page = new Page();
+  });
+
+  it("get title", () => {
+    const title = page.title;
+    expect(page.headerMarkup).toEqual(`<h1>${title}</h1>`);
+  });
+
+  it("set title", () => {
+    expect(page.headerMarkup).toEqual(`<h1></h1>`);
+    page.newTitle = "hello world";
+    expect(page.headerMarkup).toEqual(`<h1>hello world</h1>`);
   });
 });
