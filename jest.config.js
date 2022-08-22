@@ -2,13 +2,13 @@ const testModulePath = [
   // '**/minjman/after/**/*',
   // '**/heeyeon/after/**/*',
   "**/publee/after/**/*",
+  "!**/publee/after/**/*.answer",
 ];
 
 const addExtname = (ext) => testModulePath.map((path) => `${path}${ext}`);
 
 export default () => {
   return {
-    transform: {},
     rootDir: "./",
     collectCoverage: true,
     coveragePathIgnorePatterns: ["node_modules"],
