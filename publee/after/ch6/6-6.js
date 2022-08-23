@@ -6,4 +6,12 @@ export default class Owner {
   getDefaultOwner() {
     return this.owner;
   }
+
+  get firstName() {
+    return this.owner.firstName;
+  }
+
+  set firstName(name) {
+    this.owner.firstName = name;
+  }
 }

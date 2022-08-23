@@ -9,17 +9,18 @@ describe("6-6-use test", () => {
   });
 
   it("firstname을 lee로 변경했을때 적용이 잘 되는가?", () => {
-    const defaultOwner = owner.getDefaultOwner();
-    expect(defaultOwner.firstName).toEqual("마틴");
-    defaultOwner.firstName = "lee";
-    expect(defaultOwner.firstName).toEqual("lee");
+    expect(owner.getDefaultOwner()).toEqual({
+      firstName: "마틴",
+      lastName: "파울러",
+    });
+    expect(owner.firstName).toEqual("마틴");
+    owner.firstName = "lee";
+    expect(owner.firstName).toEqual("lee");
   });
 
   it("캡슐화가 잘 되었는가?", () => {
-    const defaultOwner = owner.getDefaultOwner();
-    const defaultOwner2 = owner2.getDefaultOwner();
-    expect(defaultOwner === defaultOwner2).toBe(false);
-    defaultOwner.firstName = "lee";
-    expect(defaultOwner.firstName === defaultOwner2.firstName).toBe(false);
+    expect(owner === owner2).toBe(false);
+    owner.firstName = "lee";
+    expect(owner.firstName === owner2.firstName).toBe(false);
   });
 });
