@@ -1,4 +1,4 @@
-import { readingsOutsideRange } from "./6-8.js";
+import { NumberRange, readingsOutsideRange } from "./6-8.js";
 
 describe("6-8 test", () => {
   const station = {
@@ -12,18 +12,13 @@ describe("6-8 test", () => {
     ],
   };
 
-  const operationPlan = {
-    temperatureFloor: 51,
-    temperatureCeiling: 53,
-  };
-
   it("outside range test", () => {
-    expect(
-      readingsOutsideRange(
-        station,
-        operationPlan.temperatureFloor,
-        operationPlan.temperatureCeiling
-      )
-    ).toHaveLength(2);
+    const range = new NumberRange(51, 53);
+    expect(readingsOutsideRange(station, range)).toHaveLength(2);
+  });
+
+  it("contains range test", () => {
+    const range = new NumberRange(51, 53);
+    expect(range.contains(52)).toBe(true);
   });
 });
