@@ -1,10 +1,19 @@
-import { acquireReading, baseRate } from "./6-9.js";
+import { Reading } from "./6-9.js";
 
 describe("6-9 test", () => {
-  it("6-9-1 client 1 test", () => {
-    const aReading = acquireReading();
-    const baseCharge =
-      baseRate(aReading.month, aReading.year) * aReading.quantity;
-    expect(baseCharge).toEqual(1);
+  it("year 2017 test", () => {
+    const rowReading = { customer: "ivan", quantity: 10, month: 5, year: 2017 };
+    const aReading = new Reading(rowReading);
+    expect(aReading.baseRate).toEqual(0.1);
+    expect(aReading.calculateBaseCharge).toEqual(1);
+    expect(aReading.taxableCharge).toEqual(0.9);
+  });
+
+  it("year 2016 test", () => {
+    const rowReading = { customer: "ivan", quantity: 10, month: 5, year: 2016 };
+    const aReading = new Reading(rowReading);
+    expect(aReading.baseRate).toEqual(0.2);
+    expect(aReading.calculateBaseCharge).toEqual(1);
+    expect(aReading.taxableCharge).toEqual(0.8);
   });
 });
