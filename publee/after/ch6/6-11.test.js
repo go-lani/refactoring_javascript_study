@@ -14,6 +14,6 @@ describe("6-11 test", () => {
   };
 
   it("값이 올바르게 노출되는지", () => {
-    expect(priceOrder(product, quantity, shippingMethod)).toBe(65);
+    expect(priceOrder(product, quantity, shippingMethod)).toBe(75);
   });
 });
