@@ -30,5 +30,5 @@ const shippingMethod = {
   discountedFee: 3,
 };
 
-const price = priceOrder(product, 5, shippingMethod);
+const price = priceOrder(product, 5);
 console.log(price);
