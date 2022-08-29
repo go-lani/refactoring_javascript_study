@@ -1,16 +1,13 @@
 import fs from 'fs';
+import { jest } from '@jest/globals'
 import { getOrdersLength } from './6-11-2';
 import { getOrders } from './utils/6-11-2';
-
-beforeEach(() => {
-    console.log('반복');
-    fs.existsSync = jest.fn().mockResolvedValue(true);
-});
 
 describe('6-11-2 Test', () => {
     let argv = [];
     beforeEach(() => {
-        argv[2] = 'orders';
+        argv[2] = 'ch6/orders';
+        fs.existsSync = jest.fn().mockReturnValue(true);
     });
     describe('[Success]', () => {
         it('should get orders', () => {

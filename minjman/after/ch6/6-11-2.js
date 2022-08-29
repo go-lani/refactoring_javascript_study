@@ -4,22 +4,18 @@
 
 import { getOrders } from './utils/6-11-2.js';
 
-const isTest = process.env.NODE_ENV === 'test';
-
 export const getOrdersLength = (argv) => {
   const { orders } = getOrders(argv);
-  
-  if (argv.includes('-r')) {
-    return orders.filter((order) => order.status === 'ready').length
-  } else {
-    return orders.length;
-  }
+  const filtered = argv.includes('-r') ? orders.filter((order) => order.status === 'ready') : orders;
+  return filtered.length;
 }
 
+const isTest = process.env.NODE_ENV === 'test';
 const { argv } = process;
+
 if (isTest) {
-  argv[2] = 'orders';
+  argv[2] = 'ch6/orders';
 }
-console.log('dsadsad')
+
 const ordersLength = getOrdersLength(argv);
 // console.log(ordersLength);
