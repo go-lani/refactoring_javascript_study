@@ -1,5 +1,5 @@
 const testModulePath = [
-  '**/minjman/after/**/*',
+  '**/minjman/after/ch7/**/*',
   // '**/heeyeon/after/**/*',
   // "**/publee/after/**/*",
   // "!**/publee/after/**/*.answer",
