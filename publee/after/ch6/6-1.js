@@ -20,12 +20,14 @@ export function printOwing(invoice) {
   };
 
   const printDetails = () => {
-    console.log("***********************");
-    console.log("**** Customer Owes ****");
-    console.log("***********************");
-    console.log(`name: ${invoice.customer}`);
-    console.log(`amount: ${totalAmount()}`);
-    console.log(`due: ${recordDueDate()}`);
+    console.log(`
+  ***********************
+  **** Customer Owes ****
+  ***********************
+  name: ${invoice.customer}
+  amount: ${totalAmount()}
+  due: ${recordDueDate()}
+  `);
   };
 
   printDetails();
