@@ -1,9 +1,7 @@
-import { Order } from "./6-3-2";
 import { GetDefaultOwner } from './6-6';
 
 describe("6-6.js", () => {
-  const test =  { firstName: '마틴', lastName: '파울러' };
-  const order = new GetDefaultOwner(test);
+  const order = new GetDefaultOwner('마틴', '파울러');
 
   it("firstName passed", () => {
     expect(order.firstName).toBe('마틴');
