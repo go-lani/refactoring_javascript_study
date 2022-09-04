@@ -1,19 +1,10 @@
-function foundPerson(people) {
-  for (let i = 0; i < people.length; i++) {
-    if (people[i] === 'Don') {
-      return 'Don';
-    }
-    if (people[i] === 'John') {
-      return 'John';
-    }
-    if (people[i] === 'Kent') {
-      return 'Kent';
-    }
-  }
-  return '';
+export function findPerson(people) {
+  const candidates = ['Don', 'John', 'Kent'];
+  const target = people.find(person => candidates.includes(person));
+  return target || '';
 }
 
-console.log(foundPerson(['John']));
-console.log(foundPerson(['Don', 'John']));
-console.log(foundPerson(['Kent', 'Don', 'John']));
-console.log(foundPerson(['Lisa', 'Don', 'Tom']));
+// console.log(findPerson(['John']));
+// console.log(findPerson(['Don', 'John']));
+// console.log(findPerson(['Kent', 'Don', 'John']));
+// console.log(findPerson(['Lisa', 'Tom']));
