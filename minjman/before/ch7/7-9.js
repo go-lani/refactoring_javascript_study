@@ -16,4 +16,4 @@ function foundPerson(people) {
 console.log(foundPerson(['John']));
 console.log(foundPerson(['Don', 'John']));
 console.log(foundPerson(['Kent', 'Don', 'John']));
-console.log(foundPerson(['Lisa', 'Don', 'Tom']));
+console.log(foundPerson(['Lisa', 'Tom']));
