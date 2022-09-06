@@ -1,9 +1,9 @@
 export class Organization {
     #name;
     #country;
-    constructor(organization) {
-        this.#name = organization.name;
-        this.#country = organization.country;
+    constructor(name, country) {
+        this.#name = name;
+        this.#country = country;
     }
     get name() {
         return this.#name;
@@ -19,7 +19,7 @@ export class Organization {
     }
 }
 
-const organization = new Organization({ name: 'Acme Gooseberries', country: 'GB' });
+const organization = new Organization('Acme Gooseberries', 'GB');
 organization.name = 'Dream Coding';
 // console.log(organization.name);
 // console.log(organization.country);

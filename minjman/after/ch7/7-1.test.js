@@ -3,7 +3,7 @@ import { Organization } from './7-1';
 describe('7-1 Test', () => {
     let organization = null;
     beforeEach(() => {
-        organization = new Organization({ name: 'Acme Gooseberries', country: 'GB' });
+        organization = new Organization('Acme Gooseberries', 'GB');
     });
     it('should return name and country', () => {
         expect(organization.name).toBe('Acme Gooseberries');
