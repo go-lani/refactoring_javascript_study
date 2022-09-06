@@ -14,7 +14,6 @@ describe('7-7 Test', () => {
         expect(person.department).toEqual(department2);
     });
 
-
     it('get valid name value', () => {
         expect(person.name).toBe('Tom');
     });
