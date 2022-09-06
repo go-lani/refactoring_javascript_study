@@ -1,8 +1,8 @@
 const testModulePath = [
-  // '**/minjman/after/ch7/**/*',
+  '**/minjman/after/ch7/**/*',
   // '**/heeyeon/after/**/*',
-  '**/publee/after/**/*',
-  '!**/publee/after/**/*.answer',
+  // '**/publee/after/**/*',
+  // '!**/publee/after/**/*.answer',
 ]
 
 const addExtname = (ext) => testModulePath.map((path) => `${path}${ext}`)

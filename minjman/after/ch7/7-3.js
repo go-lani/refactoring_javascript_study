@@ -1,9 +1,9 @@
 export class Order {
   constructor(priority) {
-    this.priority = priority;
+    this.priority = priority.name;
   }
   isHighPriority() {
-    return this.priority.index !== 0;
+    return this.priority === 'high' || this.priority === 'rush';
   }
 }
 
