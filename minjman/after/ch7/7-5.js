@@ -1,5 +1,3 @@
-// 이런 방식은 Person 객체와 Phone 객체의 의존성이 높아지는 것이지 않나...?
-// 의존성은 낮은 것이 더 좋은 것으로 알고 있는데..?
 export class Person {
   #name;
   #phone
