@@ -23,3 +23,14 @@ function emitPhotoData(aPhoto) {
 function renderPhoto(aPhoto) {
   return '';
 }
+
+const person = {
+  name: 'Kim',
+  photo: {
+    title: '제목',
+    location: '서울',
+    date: new Date()
+  }
+}
+
+console.log(renderPerson(person));
