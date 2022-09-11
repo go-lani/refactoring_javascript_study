@@ -8,3 +8,19 @@ export function reportYoungestAgeAndTotalSalary(people) {
 
   return `youngestAge: ${youngest}, totalSalary: ${totalSalary}`;
 }
+
+const people = [
+  {
+    age: 25,
+    salary: 500
+  },
+  {
+    age: 27,
+    salary: 1000
+  },
+  {
+    age: 29,
+    salary: 300
+  }
+];
+console.log(reportYoungestAgeAndTotalSalary(people));
