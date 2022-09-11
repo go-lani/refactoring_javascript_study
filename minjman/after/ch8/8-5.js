@@ -1,4 +1,3 @@
-let appliesToMass = false;
-for (const s of states) {
-  if (s === 'MA') appliesToMass = true;
+export function isIncludeMA(states) {
+  return states.includes('MA');
 }

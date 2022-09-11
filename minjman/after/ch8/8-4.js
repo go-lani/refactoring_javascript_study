@@ -1,30 +1,60 @@
-function renderPerson(outStream, person) {
-  outStream.write(`<p>${person.name}</p>\n`);
-  renderPhoto(outStream, person.photo);
-  emitPhotoData(outStream, person.photo);
+export function renderPerson(person) {
+  const result = [];
+  result.push(`<p>${person.name}</p>`);
+  result.push(renderPhoto(person.photo));
+  result.push(emitPhotoData(person.photo));
+  result.push(`<p>location: ${person.photo.location}</p>`);
+  return result.join('\n');
 }
 
-function listRecentPhotos(outStream, photos) {
+export function listRecentPhotos(photos) {
+  const result = [];
   photos
-    .filter((p) => p.date > recentDateCutoff())
-    .forEach((p) => {
-      outStream.write('<div>\n');
-      emitPhotoData(outStream, p);
-      outStream.write('</div>\n');
+    .filter((photo) => photo.date > recentDateCutoff())
+    .forEach((photo) => {
+      result.push('<div>');
+      result.push(emitPhotoData(photo));
+      result.push(`<p>위치: ${photo.location}</p>`);
+      result.push('</div>');
     });
+  return result.join('\n');
 }
 
-function emitPhotoData(outStream, photo) {
-  outStream.write(`<p>title: ${photo.title}</p>\n`);
-  outStream.write(`<p>date: ${photo.date.toDateString()}</p>\n`);
-  outStream.write(`<p>location: ${photo.location}</p>\n`);
+function emitPhotoData(photo) {
+  const result = [
+    `<p>title: ${photo.title}</p>`,
+    `<p>date: ${photo.date.toDateString()}</p>`
+  ];
+  return result.join('\n');
 }
 
-function renderPhoto(outStream, aPhoto) {
-  outStream.write('');
+function renderPhoto(photo) {
+  return '';
 }
 
 function recentDateCutoff() {
   //7 days ago.
   return new Date().setDate(new Date().getDate() - 7);
 }
+
+
+const photos = [
+  {
+    title: '제목1',
+    location: '서울',
+    date: new Date()
+  },
+  {
+    title: '제목1',
+    location: '경기',
+    date: new Date().setDate(new Date().getDate() - 8)
+  }
+];
+
+const person = {
+  name: 'Kim',
+  photo: photos[0]
+};
+
+// console.log(renderPerson(person));
+// console.log(listRecentPhotos(photos));
