@@ -10,8 +10,8 @@ export function renderPerson(person) {
 export function listRecentPhotos(photos) {
   const result = [];
   photos
-    .filter((photo) => photo.date > recentDateCutoff())
-    .forEach((photo) => {
+    .filter(photo => photo.date > recentDateCutoff())
+    .forEach(photo => {
       result.push('<div>');
       result.push(emitPhotoData(photo));
       result.push(`<p>위치: ${photo.location}</p>`);
@@ -23,7 +23,7 @@ export function listRecentPhotos(photos) {
 function emitPhotoData(photo) {
   const result = [
     `<p>title: ${photo.title}</p>`,
-    `<p>date: ${photo.date.toDateString()}</p>`
+    `<p>date: ${photo.date.toDateString()}</p>`,
   ];
   return result.join('\n');
 }
@@ -37,23 +37,22 @@ function recentDateCutoff() {
   return new Date().setDate(new Date().getDate() - 7);
 }
 
-
 const photos = [
   {
     title: '제목1',
     location: '서울',
-    date: new Date()
+    date: new Date(),
   },
   {
     title: '제목1',
     location: '경기',
-    date: new Date().setDate(new Date().getDate() - 8)
-  }
+    date: new Date().setDate(new Date().getDate() - 8),
+  },
 ];
 
 const person = {
   name: 'Kim',
-  photo: photos[0]
+  photo: photos[0],
 };
 
 // console.log(renderPerson(person));

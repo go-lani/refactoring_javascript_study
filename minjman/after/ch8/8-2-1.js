@@ -26,7 +26,7 @@ export class Customer {
 
 class CustomerContract {
   #startDate;
-  #discountRate
+  #discountRate;
   constructor(startDate, discountRate) {
     this.#startDate = startDate;
     this.#discountRate = discountRate;

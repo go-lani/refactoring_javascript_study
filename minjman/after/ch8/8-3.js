@@ -7,16 +7,14 @@ export function renderPerson(person) {
 }
 
 export function photoDiv(photo) {
-  return ['<div>', emitPhotoData(photo), '</div>'].join(
-    '\n'
-  );
+  return ['<div>', emitPhotoData(photo), '</div>'].join('\n');
 }
 
 function emitPhotoData(photo) {
   const result = [
     `<p>title: ${photo.title}</p>`,
     `<p>location: ${photo.location}</p>`,
-    `<p>date: ${photo.date.toDateString()}</p>`
+    `<p>date: ${photo.date.toDateString()}</p>`,
   ];
   return result.join('\n');
 }
@@ -30,9 +28,9 @@ const person = {
   photo: {
     title: '제목',
     location: '서울',
-    date: new Date()
-  }
-}
+    date: new Date(),
+  },
+};
 
 // console.log(renderPerson(person));
 // console.log(photoDiv(person.photo));

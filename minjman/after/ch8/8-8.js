@@ -1,7 +1,11 @@
 export function acquireData(input) {
-  const result = input.split('\n').slice(1).filter(line => line.trim() !== '').map(line => line.split(',')).filter(line => line[1].trim() === 'India').map(record => (
-   { city: record[0].trim(), phone: record[2].trim() }
-  ));
+  const result = input
+    .split('\n')
+    .slice(1)
+    .filter(line => line.trim() !== '')
+    .map(line => line.split(','))
+    .filter(line => line[1].trim() === 'India')
+    .map(record => ({ city: record[0].trim(), phone: record[2].trim() }));
   return result;
 }
 

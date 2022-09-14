@@ -6,12 +6,10 @@ let charge;
 
 // 예제 2
 function someFunc() {
-  let result;
-  if (availableResources.length === 0) {
-    result = createResource();
-  } else {
-    result = availableResources.pop();
-  }
+  const result =
+    availableResources.length === 0
+      ? createResource()
+      : availableResources.pop();
   allocatedResources.push(result);
   return result;
 }

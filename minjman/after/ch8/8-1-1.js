@@ -31,7 +31,6 @@ function radians(degrees) {
   return (degrees * Math.PI) / 180;
 }
 
-
 const newYork = {
   lat: 40.73061,
   lon: -73.935242,

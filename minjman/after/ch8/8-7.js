@@ -9,15 +9,15 @@ export function reportTotalSalary(people) {
 const people = [
   {
     age: 25,
-    salary: 500
+    salary: 500,
   },
   {
     age: 27,
-    salary: 1000
+    salary: 1000,
   },
   {
     age: 29,
-    salary: 300
-  }
+    salary: 300,
+  },
 ];
 // console.log(`youngestAge: ${reportYoungestAge(people)}, totalSalary: ${reportTotalSalary(people)}`);

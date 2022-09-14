@@ -4,7 +4,9 @@ export class Account {
     this._daysOverdrawn = daysOverdrawn;
   }
   get bankCharge() {
-    return this._daysOverdrawn > 0 ? 4.5 + this.type.overdraftCharge(this) : 4.5;
+    return this._daysOverdrawn > 0
+      ? 4.5 + this.type.overdraftCharge(this)
+      : 4.5;
   }
   get daysOverdrawn() {
     return this._daysOverdrawn;
@@ -21,9 +23,11 @@ export class AccountType {
   overdraftCharge(account) {
     if (this.isPremium) {
       const baseCharge = 10;
-      return account.daysOverdrawn <= 7 ? baseCharge : baseCharge + (account.daysOverdrawn - 7) * 0.85;
+      return account.daysOverdrawn <= 7
+        ? baseCharge
+        : baseCharge + (account.daysOverdrawn - 7) * 0.85;
     } else {
       return account.daysOverdrawn * 1.75;
-    } 
+    }
   }
 }
