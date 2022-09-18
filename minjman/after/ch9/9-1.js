@@ -26,17 +26,17 @@ export function distanceTravelled(scenario, time) {
   return result;
 }
 
-console.log(
-  distanceTravelled(
-    {
-      primaryForce: 2,
-      mass: 3,
-      delay: 4,
-      secondaryForce: 5,
-    },
-    5,
-  ),
-);
+// console.log(
+//   distanceTravelled(
+//     {
+//       primaryForce: 2,
+//       mass: 3,
+//       delay: 4,
+//       secondaryForce: 5,
+//     },
+//     5,
+//   ),
+// );
 
 // 예제 3
 export function discount(inputValue, quantity) {
