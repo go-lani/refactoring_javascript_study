@@ -1,4 +1,4 @@
-class Customer {
+class Discount {
   constructor() {
     this.discountRate = 0;
   }
