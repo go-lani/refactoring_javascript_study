@@ -1,8 +1,3 @@
-for (const p of people) {
-  if (!found) {
-    if (p === 'Don') {
-      sendAlert();
-      found = true;
-    }
-  }
+export function isTargetInPeople(people, target) {
+  return people.includes(target);
 }

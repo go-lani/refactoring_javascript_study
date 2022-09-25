@@ -20,3 +20,5 @@ export function payAmount(employee) {
 function someFinalComputation() {
   return { amount: 999, reasonCode: 'UNICORN' };
 }
+
+console.log(payAmount({ isSeparated: false, isRetired: false }));
