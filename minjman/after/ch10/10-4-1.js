@@ -1,32 +1,75 @@
 export function plumages(birds) {
-  let map = birds.map((b) => [b.name, plumage(b)]);
-  let map1 = new Map(map);
+  let map = birds.map(bird => [bird.name, bird.plumage]);
+  let map1 = [...new Map(map)];
   return map1;
 }
 export function speeds(birds) {
-  return new Map(birds.map((b) => [b.name, airSpeedVelocity(b)]));
+  return [...new Map(birds.map(bird => [bird.name, bird.airSpeedVelocity]))];
 }
-export function plumage(bird) {
-  switch (bird.type) {
-    case 'EuropeanSwallow':
-      return 'average';
-    case 'AfricanSwallow':
-      return bird.numberOfCoconuts > 2 ? 'tired' : 'average';
-    case 'NorwegianBlueParrot':
-      return bird.voltage > 100 ? 'scorched' : 'beautiful';
-    default:
-      return 'unknown';
+
+export class Bird {
+  #name;
+  constructor(name) {
+    this.#name = name;
+  }
+  get name() {
+    return this.#name;
+  }
+  get plumage() {
+    return 'unknown';
+  }
+  get airSpeedVelocity() {
+    return null;
   }
 }
-export function airSpeedVelocity(bird) {
-  switch (bird.type) {
-    case 'EuropeanSwallow':
-      return 35;
-    case 'AfricanSwallow':
-      return 40 - 2 * bird.numberOfCoconuts;
-    case 'NorwegianBlueParrot':
-      return bird.isNailed ? 0 : 10 + bird.voltage / 10;
-    default:
-      return null;
+
+export class EuropeanSwallow extends Bird {
+  constructor() {
+    super('EuropeanSwallow');
+  }
+  get plumage() {
+    return 'average';
+  }
+  get airSpeedVelocity() {
+    return 35;
   }
 }
+
+export class AfricanSwallow extends Bird {
+  constructor() {
+    super('AfricanSwallow');
+  }
+  get plumage() {
+    return 'tired';
+  }
+  get airSpeedVelocity() {
+    return 40;
+  }
+}
+
+export class NorwegianBlueParrot extends Bird {
+  constructor() {
+    super('NorwegianBlueParrot');
+  }
+  get plumage() {
+    return 'beautiful';
+  }
+  get airSpeedVelocity() {
+    return 10;
+  }
+}
+
+// console.log(
+//   plumages([
+//     new EuropeanSwallow(),
+//     new AfricanSwallow(),
+//     new NorwegianBlueParrot(),
+//   ]),
+// );
+// console.log(
+//   speeds([
+//     new EuropeanSwallow(),
+//     new AfricanSwallow(),
+//     new NorwegianBlueParrot(),
+//   ]),
+// );
