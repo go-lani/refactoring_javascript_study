@@ -9,7 +9,7 @@ describe('9-1 Test', () => {
       width = 5;
     });
     it('should return area', () => {
-      expect(getArea(height, width)).toEqual({ firstArea: 18, area: 20 });
+      expect(getArea(height, width)).toEqual({ perimeter: 18, area: 20 });
     });
   });
 
@@ -42,7 +42,7 @@ describe('9-1 Test', () => {
       quantity = 200;
     });
     it('should return discount result(1)', () => {
-      expect(discount(inputValue, quantity)).toBe(99);
+      expect(discount(inputValue, quantity)).toBe(97);
     });
     it('should return discount result(2)', () => {
       inputValue = 50;

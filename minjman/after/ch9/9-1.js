@@ -1,8 +1,8 @@
 // 예제 1
 export function getArea(height, width) {
-  const firstArea = 2 * (height + width);
+  const perimeter = 2 * (height + width);
   const area = height * width;
-  return { firstArea, area };
+  return { perimeter, area };
 }
 
 // 예제 2
@@ -41,7 +41,7 @@ export function distanceTravelled(scenario, time) {
 // 예제 3
 export function discount(inputValue, quantity) {
   let result = inputValue;
-  if (inputValue > 50) result = inputValue - 2;
-  if (quantity > 100) result = inputValue - 1;
+  if (inputValue > 50) result -= 2;
+  if (quantity > 100) result -= 1;
   return result;
 }
