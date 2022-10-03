@@ -4,15 +4,14 @@ describe('9-3 Test', () => {
   describe('예제1', () => {
     let order = null;
     beforeEach(() => {
-      order = new Order(50);
+      order = new Order(50, 100);
     });
     it('should get discount', () => {
       order.discount = 30;
       expect(order.discount).toBe(30);
     });
     it('should get discountedTotal', () => {
-      order.discount = 30;
-      expect(order.discountedTotal).toBe(70);
+      expect(order.discountedTotal).toBe(50);
     });
   });
 
