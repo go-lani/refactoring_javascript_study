@@ -1,14 +1,8 @@
 const values = [];
-function getValueForPeriod(periodNumber) {
-  const value = values[periodNumber];
-  if (!value) {
-    throw new Error('value is undefined');
-  }
-  return value;
+export function getValueForPeriod(periodNumber, values) {
+  return periodNumber < 0 || periodNumber >= values.length
+    ? 0
+    : values[periodNumber];
 }
 
-try {
-  getValueForPeriod(-10);
-} catch (error) {
-  console.log('에러 발생!');
-}
+// getValueForPeriod(-10, values);
