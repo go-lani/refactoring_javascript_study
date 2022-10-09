@@ -1,4 +1,4 @@
-class Employee {
+export class Employee {
   constructor(name, typeCode) {
     this._name = name;
     this._typeCode = typeCode;
@@ -12,12 +12,13 @@ class Employee {
   static get legalTypeCodes() {
     return { E: 'Engineer', M: 'Manager', S: 'Salesman' };
   }
+  static createEngineer(name) {
+    return new Employee(name, 'E');
+  }
+  static createManager(name) {
+    return new Employee(name, 'M');
+  }
 }
 
-export function createEngineer(name) {
-  return new Employee(name, 'E');
-}
-
-export function createManager(name) {
-  return new Employee(name, 'M');
-}
+const engineer = Employee.createEngineer('kim');
+const manager = Employee.createManager('Park');
