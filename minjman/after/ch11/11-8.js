@@ -1,4 +1,5 @@
 export class Employee {
+  // 생성자 객체는 private 하게 바꿔야 함! _ 자바스크립트는 아직 불가능
   constructor(name, typeCode) {
     this._name = name;
     this._typeCode = typeCode;
