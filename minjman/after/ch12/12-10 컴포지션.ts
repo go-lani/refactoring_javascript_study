@@ -39,4 +39,4 @@ const tPrinters = [
   new TPrinter(new TRedPrinterHeader()),
   new TPrinter(new TBlackPrinterHeader()),
 ];
-printers.forEach(printer => printer.print());
+tPrinters.forEach(printer => printer.print());
