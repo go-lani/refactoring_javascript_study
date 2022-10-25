@@ -5,9 +5,9 @@ const format = new Intl.NumberFormat('en-US', {
 }).format;
 
 class Play {
-  #thisAmount = 0;
+  #selectedPlayType;
   constructor(performance) {
-    this.#thisAmount = this.selectedPlayType(performance);
+    this.#selectedPlayType = this.selectedPlayType(performance);
   }
 
   selectedPlayType(performance) {
@@ -27,6 +27,11 @@ class Performance {
   constructor(performance) {
     this.#performance = performance;
   }
+
+  get performance() {
+    return this.#performance;
+  }
+
   get thisAmount() {
     return 0;
   }
@@ -57,14 +62,37 @@ class Statement {
   #volumeCredits;
   #invoice;
   #plays;
+  #selected;
+
   constructor(invoice, plays) {
     this.#invoice = invoice;
     this.#plays = plays;
+    this.#selected = this.selector(invoice.performances);
+  }
+
+  get thisAmount() {
+    return this.#selected.thisAmount;
+  }
+
+  selector(performances) {
+    for (let perf of performances) {
+      const play = this.#plays[perf.playID];
+      switch (play.type) {
+        case 'tragedy': // 비극
+          return new TragedyPerformance(performance);
+        case 'comedy': // 희극
+          return new ComedyPerformance(performance);
+        default:
+          throw new Error(`알 수 없는 장르: ${play.type}`);
+      }
+    }
   }
 
   get totalAmount() {
     let result = 0;
     for (let perf of this.#invoice.performances) {
+      // perf
+
       const play = this.#plays[perf.playID];
       let thisAmount = 0;
 
@@ -222,5 +250,7 @@ const expected =
   '총액: $1,730.00\n' +
   '적립 포인트: 47점\n';
 
-console.log(statement.print);
-console.log(statement.print === expected);
+// console.log(statement.print);
+// console.log(statement.print === expected);
+
+console.log('!!!', statement.thisAmount);
