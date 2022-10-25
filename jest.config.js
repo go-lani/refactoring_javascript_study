@@ -1,7 +1,11 @@
 const testModulePath = [
+<<<<<<< Updated upstream
   '**/minjman/after/challenge/**/*',
+=======
+  // '**/minjman/after/ch12/**/*',
+>>>>>>> Stashed changes
   // '**/heeyeon/after/**/*',
-  // '**/publee/after/ch11/*',
+  '**/publee/after/challenge/**/*',
   // '!**/publee/after/**/*.answer',
 ];
 
